@@ -13,7 +13,8 @@ def getLogger(name):
     log_name = name + '-' + time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
 
     # 创建日志句柄，日志文件存储的位置
-    log_file_path = os.path.dirname(os.path.abspath('.'))+'\\log\\'+log_name+'.log'
+    # log_file_path = os.path.dirname(os.path.abspath('.'))+'\\log\\'+log_name+'.log'
+    log_file_path = os.path.abspath('.') + '\\' + name + '.log'
     print(log_file_path)
     fileh = logging.FileHandler(log_file_path)
     # 设置日志级别
@@ -37,4 +38,5 @@ def getLogger(name):
 
     # logger.info('hello python')
 
-getLogger('test')
+log = getLogger('test')
+log.info('哈哈哈')
